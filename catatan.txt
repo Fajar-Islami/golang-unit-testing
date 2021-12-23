@@ -1,0 +1,54 @@
+Dari engineering with imree
+Video 1
+Unit test = proses yang digunakan untuk memverifikasi hasil atau side effect dari sebagian kecil kode
+
+Unit test = 
+- memastikan indivudal part (fungsi, class yang saling berkolaborasi satu sama lain) berjalan.
+- bisa dijalankan kapan aja karena butuh waktu yang cepat, bisa dalam 5-10m.
+- untuk menemukan error gampang
+
+Integration test = 
+- memastikan sejumlah class yang bekerja sama memiliki behaviour yang benar.
+- tidak bisa dijalankan kapan aja karena butuh waktu yang lama. Dijalankan pada waktu tertentu seperti ketika merge, mau release, bisa butuh waktu 30m - 4 jam.
+- sulit menemukan error, maka dibutuhkan log
+
+Unit testing golang udah ada package testing
+https://pkg.go.dev/testing
+
+Video 2
+kalau mau buat test, buat file <nama>_test.go
+lalu di func nya kasih prefix Test, lalu di param nya kasih t *testing.T
+
+assertion = memastikan hasil fungsi sesuai ekspetasi kita
+
+Video 3
+agar file test tidak masuk ke binary production maka nama package nya diubah, ditambah prefix  <nama>_test
+
+Video 4
+Test Table = set dari input space dan expected outcome. Dia berupa []struct
+
+Video 5
+Kelebihan pakai hirarki tes adalah ketika subtest yang berada pada 1 level yang sama akan dijalankan paralel. Kalau yang biasa (for loop) secara seri.
+
+Video 6
+testing short = dipakai ketika apakah unit test yang dijalankan dalam mode short atau tidak. Jadi yang dijalankan yang durasinya kecil2.
+
+testing skip = skip unit test
+
+untuk tes short
+go test -v -short math/math_test.go
+
+
+// Pengenalan TDD
+Test Driven Development
+Pembuatan test implementasi nya, buat code baru test lagi.
+
+TDD cycle = Red -> Green -> Refactor -> Red dst
+Red = Membuat unit test gagal
+Green = membuat unit test yang hijau. Kenapa dibuat merah dulu, karena agar tahu tidak ada faktor2 lain yang bisa membuat unit test lain yang bisa hijau
+Refactor = masa membersihkan kode, production code/test code
+
+
+
+// Writing Better Test in Go
+Maintainbility = 
